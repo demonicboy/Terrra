@@ -2,8 +2,14 @@ extends Node
 const DeviceInfo = preload("res://scripts/device.gd").DeviceInfo
 
 var devices = []# Mảng để lưu các đối tượng DeviceInfo
+var working_on_index = 0
+
+
+
 
 func extract_device_data(device_data):
+	print("test")
+	print(device_data)
 	# Duyệt qua từng device trong JSON response
 	for device in device_data:
 		var device_info = DeviceInfo.new(
@@ -27,6 +33,8 @@ func extract_device_data(device_data):
 
 	return devices
 
+func get_performanceID(index:int,performanceID:String):
+	devices[index].performanceID = performanceID
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

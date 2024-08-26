@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c52rsc6cef2jr"]
+
+[ext_resource type="Texture2D" uid="uid://d1ehixg76h877" path="res://resource/rain/rain.png" id="1_vt06o"]
+[ext_resource type="Script" path="res://rain.gd" id="2_8m74t"]
+
+[node name="rain" type="Sprite2D"]
+texture = ExtResource("1_vt06o")
+script = ExtResource("2_8m74t")

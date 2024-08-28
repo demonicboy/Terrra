@@ -4,6 +4,7 @@ const DeviceInfo = preload("res://scripts/device.gd").DeviceInfo
 var devices = []# Mảng để lưu các đối tượng DeviceInfo
 var working_on_index = 0
 
+var Terra_Status:Terra
 
 
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bikvox3d31ye1"]
+
+[ext_resource type="Texture2D" uid="uid://dwoy6mhfeox2m" path="res://resource/thermometer/normal.png" id="1_2m8ww"]
+[ext_resource type="Script" path="res://sences/themometer/themometer.gd" id="1_c5aol"]
+
+[node name="themometer" type="Sprite2D"]
+texture = ExtResource("1_2m8ww")
+script = ExtResource("1_c5aol")
+
+[node name="temperature" type="Label" parent="."]
+offset_left = -32.0
+offset_top = 108.0
+offset_right = 26.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "20°C"

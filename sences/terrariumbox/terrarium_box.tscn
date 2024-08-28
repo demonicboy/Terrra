@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce3jts5f6u0dw"]
+[gd_scene load_steps=7 format=3 uid="uid://ce3jts5f6u0dw"]
 
-[ext_resource type="Texture2D" uid="uid://dwoy6mhfeox2m" path="res://resource/thermometer/normal.png" id="1_v4mwq"]
 [ext_resource type="Texture2D" uid="uid://cxar7g4tsb40e" path="res://resource/terrarium.png" id="2_msxj5"]
 [ext_resource type="PackedScene" uid="uid://d1fh6mw7l71gx" path="res://sences/sun/sun.tscn" id="3_388y3"]
 [ext_resource type="PackedScene" uid="uid://c52rsc6cef2jr" path="res://sences/rain/rain.tscn" id="4_5ldcb"]
 [ext_resource type="PackedScene" uid="uid://b84nj7thcucjb" path="res://sences/dirt/dirt.tscn" id="5_0ok1x"]
+[ext_resource type="PackedScene" uid="uid://c4no283qo7gb" path="res://sences/pumper/pumper.tscn" id="6_j2wx6"]
+[ext_resource type="PackedScene" uid="uid://bikvox3d31ye1" path="res://sences/themometer/themometer.tscn" id="6_qpi84"]
 
 [node name="TerrariumBox" type="Control"]
 layout_mode = 3
@@ -13,11 +14,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Thermometer" type="Sprite2D" parent="."]
-position = Vector2(347, 446)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_v4mwq")
 
 [node name="Terrarium" type="Sprite2D" parent="."]
 position = Vector2(202, 428)
@@ -31,3 +27,11 @@ position = Vector2(332, 234)
 
 [node name="dirt" parent="." instance=ExtResource("5_0ok1x")]
 position = Vector2(74, 563)
+
+[node name="pumper" parent="." instance=ExtResource("6_j2wx6")]
+position = Vector2(196, 653)
+scale = Vector2(0.8, 0.8)
+
+[node name="themometer" parent="." instance=ExtResource("6_qpi84")]
+position = Vector2(340, 442)
+scale = Vector2(0.5, 0.5)

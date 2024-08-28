@@ -7,3 +7,4 @@ signal load_box(index:int)
 signal load_performance(id:String)
 
 signal update_humidity(value)
+signal update_Terra_Status

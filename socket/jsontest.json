@@ -1,0 +1,488 @@
+{
+  "CreatedAt": "2024-08-26T08:16:12.543265+00:00",
+  "DocumentName": "Device Performance Data",
+  "Id": "c80a1dd7-83f3-4453-ab47-e6eb09165d6d",
+  "Payload": [
+    {
+      "data": {
+        "Value": {
+          "humid": 110,
+          "temp": 55
+        }
+      },
+      "sensor_name": "dht",
+      "sensor_type": "DHT",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724660172543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Value": {
+          "humid": 50,
+          "temp": 20
+        }
+      },
+      "sensor_name": "dht",
+      "sensor_type": "DHT",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724677452543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Value": {
+          "humid": 130,
+          "temp": 60
+        }
+      },
+      "sensor_name": "dht",
+      "sensor_type": "DHT",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724694732543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Value": {
+          "humid": 90,
+          "temp": 60
+        }
+      },
+      "sensor_name": "dht",
+      "sensor_type": "DHT",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724712012543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Value": {
+          "humid": 120,
+          "temp": 40
+        }
+      },
+      "sensor_name": "dht",
+      "sensor_type": "DHT",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724729292543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Value": {
+          "humid": 60,
+          "temp": 25
+        }
+      },
+      "sensor_name": "dht",
+      "sensor_type": "DHT",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724746572543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": true
+      },
+      "sensor_name": "pumpRelay",
+      "sensor_type": "Pump",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724660172543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": true
+      },
+      "sensor_name": "pumpRelay",
+      "sensor_type": "Pump",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724677452543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": true
+      },
+      "sensor_name": "pumpRelay",
+      "sensor_type": "Pump",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724694732543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": true
+      },
+      "sensor_name": "pumpRelay",
+      "sensor_type": "Pump",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724712012543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": true
+      },
+      "sensor_name": "pumpRelay",
+      "sensor_type": "Pump",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724729292543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": true
+      },
+      "sensor_name": "pumpRelay",
+      "sensor_type": "Pump",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724746572543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": true
+      },
+      "sensor_name": "valveRelay",
+      "sensor_type": "Valve",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724660172543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": false
+      },
+      "sensor_name": "valveRelay",
+      "sensor_type": "Valve",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724677452543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": true
+      },
+      "sensor_name": "valveRelay",
+      "sensor_type": "Valve",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724694732543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": false
+      },
+      "sensor_name": "valveRelay",
+      "sensor_type": "Valve",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724712012543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": false
+      },
+      "sensor_name": "valveRelay",
+      "sensor_type": "Valve",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724729292543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isActive": false
+      },
+      "sensor_name": "valveRelay",
+      "sensor_type": "Valve",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724746572543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Color": [
+          6,
+          220,
+          208
+        ],
+        "isActive": true
+      },
+      "sensor_name": "Light",
+      "sensor_type": "Light",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724660172543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Color": [
+          145,
+          120,
+          12
+        ],
+        "isActive": false
+      },
+      "sensor_name": "Light",
+      "sensor_type": "Light",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724677452543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Color": [
+          38,
+          198,
+          210
+        ],
+        "isActive": true
+      },
+      "sensor_name": "Light",
+      "sensor_type": "Light",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724694732543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Color": [
+          119,
+          119,
+          125
+        ],
+        "isActive": true
+      },
+      "sensor_name": "Light",
+      "sensor_type": "Light",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724712012543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Color": [
+          127,
+          12,
+          87
+        ],
+        "isActive": false
+      },
+      "sensor_name": "Light",
+      "sensor_type": "Light",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724729292543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Color": [
+          102,
+          184,
+          86
+        ],
+        "isActive": true
+      },
+      "sensor_name": "Light",
+      "sensor_type": "Light",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724746572543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Moisture": 110
+      },
+      "sensor_name": "Moisture",
+      "sensor_type": "Moisture",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724660172543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Moisture": 70
+      },
+      "sensor_name": "Moisture",
+      "sensor_type": "Moisture",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724677452543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Moisture": 70
+      },
+      "sensor_name": "Moisture",
+      "sensor_type": "Moisture",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724694732543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Moisture": 60
+      },
+      "sensor_name": "Moisture",
+      "sensor_type": "Moisture",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724712012543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Moisture": 90
+      },
+      "sensor_name": "Moisture",
+      "sensor_type": "Moisture",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724729292543"
+        }
+      }
+    },
+    {
+      "data": {
+        "Moisture": 70
+      },
+      "sensor_name": "Moisture",
+      "sensor_type": "Moisture",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724746572543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isAvailable": true
+      },
+      "sensor_name": "Water",
+      "sensor_type": "Water",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724660172543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isAvailable": false
+      },
+      "sensor_name": "Water",
+      "sensor_type": "Water",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724677452543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isAvailable": true
+      },
+      "sensor_name": "Water",
+      "sensor_type": "Water",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724694732543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isAvailable": false
+      },
+      "sensor_name": "Water",
+      "sensor_type": "Water",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724712012543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isAvailable": true
+      },
+      "sensor_name": "Water",
+      "sensor_type": "Water",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724729292543"
+        }
+      }
+    },
+    {
+      "data": {
+        "isAvailable": true
+      },
+      "sensor_name": "Water",
+      "sensor_type": "Water",
+      "timestamp": {
+        "$date": {
+          "$numberLong": "1724746572543"
+        }
+      }
+    }
+  ],
+  "UpdatedAt": "2024-08-27T08:16:12.543265+00:00"
+}

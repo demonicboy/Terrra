@@ -1,16 +1,17 @@
 extends Node
 
-const url_api = "http://192.168.1.59"
-var access_token ="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICItZjlfc2I0WGJrRDNzRkR3cjlvZE13Z0RzMzJlMExmd0tKY0FDYjJSRlFJIn0.eyJleHAiOjE3MjQ2NzQ3NDAsImlhdCI6MTcyNDY3NDQ0MCwiYXV0aF90aW1lIjoxNzI0Njc0NDQwLCJqdGkiOiI2M2I4YmNiMy00YmVlLTRjMTYtOWJjMy00OTY4ZDg3MDk2MzQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwMDAvcmVhbG1zL1JESVBzIiwiYXVkIjpbInJlYWxtLW1hbmFnZW1lbnQiLCJicm9rZXIiLCJhY2NvdW50Il0sInN1YiI6IjMzZmY3Njk3LTRiMjgtNDQwOC04NGFjLTZlMDQ5YWRiOTBhMCIsInR5cCI6IkJlYXJlciIsImF6cCI6InJkaXBzLWNsaWVudCIsInNpZCI6IjU4MTRlZTk2LTM3MzItNDkwYy1hOTZiLTA1MjUyYjBiZGU1YiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIiwiaHR0cHM6Ly9zdW5mbG93ZXItcmRpcHMudGVjaCIsImh0dHA6Ly9sb2NhbGhvc3QiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlVzZXIiLCJkZWZhdWx0LXJvbGVzLXN1bmZsb3dlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJBZG1pbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsidmlldy1yZWFsbSIsInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJyZWFsbS1hZG1pbiIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJxdWVyeS1yZWFsbXMiLCJ2aWV3LWF1dGhvcml6YXRpb24iLCJxdWVyeS1jbGllbnRzIiwicXVlcnktdXNlcnMiLCJtYW5hZ2UtZXZlbnRzIiwibWFuYWdlLXJlYWxtIiwidmlldy1ldmVudHMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWF1dGhvcml6YXRpb24iLCJtYW5hZ2UtY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyJdfSwiYnJva2VyIjp7InJvbGVzIjpbInJlYWQtdG9rZW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LWFwcGxpY2F0aW9ucyIsInZpZXctY29uc2VudCIsInZpZXctZ3JvdXBzIiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJkZWxldGUtYWNjb3VudCIsIm1hbmFnZS1jb25zZW50Iiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.sodTUUcDx94jaqtO5XQFJr5R7VSUMMVWhqjeO7d1sWTPn5_jXFX4NxqRvu-YB9Dl3xrzSdJaMJbnVTBldyn5HwDCuJLoPPENI8OEfwUn0Z6sUpm1nEv2bJIcRWHBpqXQY94dGX9-gzChQK9sHR8nC-la7uKUcQYgb2LVRL6Ilu4szRkaAnqkJMqbI6an7b4Ueb_X62qmecPmfq__Q9H5SPtYqRmGhyTTonauvjPCYhvy5y-O3v0UYXDywt3o7IaX_YMflrDjiJGTsxU-9RGGHTJrPiAfr-NDStgPJpGQl1ZekSg2Dcp31rkQxxTyZEokem3bMmEgld968z7j8b-opg"
+const url_api = "http://127.0.0.1:5000"
+var access_token =""
 
 func _ready():
 	SignalControl.login_api.connect(request_devices)
 	SignalControl.load_performance.connect(request_performance)
+	
 	# Create an HTTP request node and connect its completion signal.
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
-	#http_request.connect("request_completed",Callable(self, "_http_request_completed"))
-	SignalControl.login_api.emit()
+	http_request.connect("request_completed",Callable(self, "_http_request_completed"))
+	#SignalControl.login_api.emit()
 	## Perform a GET request. The URL below returns JSON as of writing.
 	#var error = http_request.request("https://httpbin.org/get")
 	#if error != OK:
@@ -21,7 +22,7 @@ func _ready():
 	# The snippet below is provided for reference only.
 	var body = JSON.stringify({"username": "admin", "password": "admin"})
 	var headers = ["Content-Type: application/json"]  # Thêm Content-Type header
-	var error = http_request.request(url_api+"/api/login", headers, HTTPClient.METHOD_GET, body)
+	var error = http_request.request(url_api+"/api/login", headers, HTTPClient.METHOD_POST, body)
 	
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
@@ -36,7 +37,7 @@ func _http_request_completed(result, response_code, headers, body):
 	var response = json.get_data()
 	print(response)
 	# Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
-	#access_token = response["access_token"]
+	access_token = response["access_token"]
 	
 	SignalControl.login_api.emit()
 
@@ -113,12 +114,31 @@ func request_performance(performanceID:String):
 func _request_performance_completed(result, response_code, headers, body):
 	print("Performance Info")
 	var json = JSON.new()
-	json.parse(body.get_string_from_utf8())
-	print(json.get_data())
-	if response_code == 200:
-		#var json = JSON.new()
-		json.parse(body.get_string_from_utf8())
+	var parse_result = json.parse(body.get_string_from_utf8())
+	if parse_result == OK:
 		var response = json.get_data()
-		print("Devices data: " + str(response["data"]))
+		if response_code == 200:
+			print("Devices data: " + str(response["data"]))
+			
+			# Clear current data in Terra_Status if necessary
+			Manage.Terra_Status = Terra.new()
+
+			# Parse the payload and update Manage.Terra_Status
+			for sensor_data in response["data"]["Payload"]:
+				# Get sensor name and data
+				var sensor_name = sensor_data["sensor_name"]
+				var data_entry = {
+					"timestamp": sensor_data["timestamp"],
+					"data": sensor_data["data"]
+				}
+
+				# Add data entry to the appropriate sensor in Terra_Status
+				Manage.Terra_Status.add_sensor_data(sensor_name, data_entry)
+
+			# Optional: You can print or log the entire Manage.Terra_Status to verify the data
+			print("Updated Terra_Status: ", Manage.Terra_Status)
+			SignalControl.update_Terra_Status.emit()
+		else:
+			print("Failed to retrieve devices with response code: " + str(response_code))
 	else:
-		print("Failed to retrieve devices with response code: " + str(response_code))
+		print("Failed to parse JSON with error: " + str(parse_result))

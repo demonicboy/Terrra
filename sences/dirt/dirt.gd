@@ -7,6 +7,7 @@ var current_texture_index = 0
 var textures = [DIRT,DIRT_01, DIRT_02]
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalControl.update_Terra_Status.connect(status_update)
 	var timer = Timer.new()
 	timer.wait_time = timeChange   # 1 giây
 	timer.one_shot = false  # Lặp lại liên tục
@@ -24,3 +25,6 @@ func wetting() -> void:
 	current_texture_index = (current_texture_index + 1) % textures.size()
 
 	texture = textures[current_texture_index]
+
+func status_update()->void:
+	

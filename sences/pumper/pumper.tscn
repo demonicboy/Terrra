@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4no283qo7gb"]
+
+[ext_resource type="Texture2D" uid="uid://docl583yqdgom" path="res://resource/pumper/pumper 01.png" id="1_ei32i"]
+[ext_resource type="Script" path="res://sences/pumper/pumper.gd" id="1_i3j5f"]
+[ext_resource type="Texture2D" uid="uid://cec6hiw7dcbfl" path="res://resource/pumper/pumper 02.png" id="2_thpbr"]
+
+[node name="pumper" type="Sprite2D"]
+script = ExtResource("1_i3j5f")
+
+[node name="Pumper01" type="Sprite2D" parent="."]
+position = Vector2(18, -1)
+texture = ExtResource("1_ei32i")
+
+[node name="Pumper02" type="Sprite2D" parent="."]
+position = Vector2(-0.166664, 0)
+texture = ExtResource("2_thpbr")
+offset = Vector2(-1.83334, 0)

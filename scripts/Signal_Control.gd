@@ -8,3 +8,8 @@ signal load_performance(id:String)
 
 signal update_humidity(value)
 signal update_Terra_Status
+
+signal go_devices_menu
+signal go_setting_menu
+
+signal re_render_lightColor

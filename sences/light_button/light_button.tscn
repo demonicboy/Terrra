@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://doy0w6pfwyhk8"]
+
+[ext_resource type="Script" path="res://sences/light_button/light_button.gd" id="1_f48s6"]
+
+[node name="light_button" type="ColorRect"]
+custom_minimum_size = Vector2(30, 30)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_f48s6")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

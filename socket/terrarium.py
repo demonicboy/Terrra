@@ -14,6 +14,9 @@ users_db = {
     "user2": "password2"
 }
 
+light_color = [0, 128, 255, 100]
+
+
 def generate_sensor_data(sensor_type, timestamp):
     if sensor_type == "DHT":
         return {
@@ -61,7 +64,11 @@ def generate_sensor_data(sensor_type, timestamp):
         return {
             "data": {
                 "isActive": bool(uuid.uuid4().int % 2),  # Trạng thái hoạt động True/False
-                "Color": [uuid.uuid4().int % 256, uuid.uuid4().int % 256, uuid.uuid4().int % 256]  # Giá trị màu RGB
+                 "Color": [
+                255 if uuid.uuid4().int % 2 == 0 else 0,  # Giá trị màu R (hoặc 0 hoặc 255)
+                255 if uuid.uuid4().int % 2 == 0 else 0,  # Giá trị màu G (hoặc 0 hoặc 255)
+                255 if uuid.uuid4().int % 2 == 0 else 0   # Giá trị màu B (hoặc 0 hoặc 255)
+            ]
             },
             "sensor_name": "Light",
             "sensor_type": sensor_type,
@@ -196,7 +203,7 @@ def login():
             # Create a token with an expiration time
             token = jwt.encode({
                 'username': username,
-                'exp': datetime.now(timezone.utc) + timedelta(minutes=30)
+                'exp': datetime.now(timezone.utc) + timedelta(days=1)
             }, SECRET_KEY, algorithm="HS256")
             
             # Return the token as a response

@@ -26,18 +26,18 @@ func pumping() -> void:
 
 func status_update() -> void:
 	# Kiểm tra xem pumper sensor có tồn tại trong Manage.Terra_Status hay không
-	if Manage.Terra_Status.water_sensor and Manage.Terra_Status.water_sensor.data.size() > 0:
-		# Lấy dữ liệu mới nhất từ water_sensor
-		var latest_data = Manage.Terra_Status.water_sensor.data[-1]  # Lấy phần tử cuối cùng trong mảng data
+	if Manage.Terra_Status.pump_sensor and Manage.Terra_Status.pump_sensor.data.size() > 0:
+		# Lấy dữ liệu mới nhất từ pump_sensor
+		var latest_data = Manage.Terra_Status.pump_sensor.data[-1]  # Lấy phần tử cuối cùng trong mảng data
 		
 		# Kiểm tra và cập nhật biến isActive dựa trên trạng thái của pump
-		if latest_data.has("data") and latest_data["data"].has("isAvailable"):
-			isActive = latest_data["data"]["isAvailable"]
+		if latest_data.has("data") and latest_data["data"].has("isActive"):
+			isActive = latest_data["data"]["isActive"]
 			if isActive:
 				print("Pump have water status updated to: ", isActive)
 			else:
 				print("Pump have no water status updated to: ", isActive)	
 		else:
-			print("No isAvailable field available in the latest water sensor data.")
+			print("No isActive field available in the latest water sensor data.")
 	else:
 		print("No data available for water_sensor.")

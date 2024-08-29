@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce3jts5f6u0dw"]
+[gd_scene load_steps=8 format=3 uid="uid://ce3jts5f6u0dw"]
 
+[ext_resource type="Script" path="res://sences/terrariumbox/terrarium_box.gd" id="1_diw53"]
 [ext_resource type="Texture2D" uid="uid://cxar7g4tsb40e" path="res://resource/terrarium.png" id="2_msxj5"]
 [ext_resource type="PackedScene" uid="uid://d1fh6mw7l71gx" path="res://sences/sun/sun.tscn" id="3_388y3"]
 [ext_resource type="PackedScene" uid="uid://c52rsc6cef2jr" path="res://sences/rain/rain.tscn" id="4_5ldcb"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_diw53")
 
 [node name="Terrarium" type="Sprite2D" parent="."]
 position = Vector2(202, 428)
@@ -35,3 +37,22 @@ scale = Vector2(0.8, 0.8)
 [node name="themometer" parent="." instance=ExtResource("6_qpi84")]
 position = Vector2(340, 442)
 scale = Vector2(0.5, 0.5)
+
+[node name="go_devices" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 738.0
+offset_right = 151.0
+offset_bottom = 769.0
+text = "Box List"
+
+[node name="go_setting" type="Button" parent="."]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 738.0
+offset_right = 355.0
+offset_bottom = 769.0
+text = "Setting"
+
+[connection signal="pressed" from="go_devices" to="." method="_on_go_devices_pressed"]
+[connection signal="pressed" from="go_setting" to="." method="_on_go_setting_pressed"]

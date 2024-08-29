@@ -7,7 +7,7 @@ const RAIN_03 = preload("res://resource/rain/rain03.png")
 var timeChange = 0.25
 var current_texture_index = 0
 var textures = [RAIN,RAIN_01, RAIN_02, RAIN_03]
-var isActive = false
+var isAvailable = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalControl.update_Terra_Status.connect(status_update)
@@ -21,7 +21,7 @@ func _ready():
 
 # Hàm này sẽ được gọi mỗi khi Timer timeout
 func _on_timer_timeout() -> void:
-	if isActive:
+	if isAvailable:
 		raining()
 
 func raining() -> void:
@@ -33,17 +33,17 @@ func raining() -> void:
 	
 func status_update()->void:
 	# Kiểm tra xem pumper sensor có tồn tại trong Manage.Terra_Status hay không
-	if Manage.Terra_Status.pump_sensor and Manage.Terra_Status.pump_sensor.data.size() > 0:
+	if Manage.Terra_Status.water_sensor and Manage.Terra_Status.water_sensor.data.size() > 0:
 		# Lấy dữ liệu mới nhất từ pump_sensor
-		var latest_data = Manage.Terra_Status.pump_sensor.data[-1]  # Lấy phần tử cuối cùng trong mảng data
+		var latest_data = Manage.Terra_Status.water_sensor.data[-1]  # Lấy phần tử cuối cùng trong mảng data
 		
-		# Kiểm tra và cập nhật biến isActive dựa trên trạng thái của pump
-		if latest_data.has("data") and latest_data["data"].has("isActive"):
-			isActive = latest_data["data"]["isActive"]
-			if not isActive:
+		# Kiểm tra và cập nhật biến isAvailable dựa trên trạng thái của pump
+		if latest_data.has("data") and latest_data["data"].has("isAvailable"):
+			isAvailable = latest_data["data"]["isAvailable"]
+			if not isAvailable:
 				texture = textures[0]
-			print("Pump isActive status updated to: ", isActive)
+			print("Pump isAvailable status updated to: ", isAvailable)
 		else:
-			print("No isActive field available in the latest pump sensor data.")
+			print("No isAvailable field available in the latest pump sensor data.")
 	else:
 		print("No data available for pump_sensor.")

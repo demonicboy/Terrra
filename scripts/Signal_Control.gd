@@ -13,3 +13,5 @@ signal go_devices_menu
 signal go_setting_menu
 
 signal re_render_lightColor
+
+

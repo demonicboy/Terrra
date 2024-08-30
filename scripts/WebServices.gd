@@ -131,7 +131,6 @@ func _request_performance_completed(result, response_code, headers, body):
 					"timestamp": sensor_data["timestamp"],
 					"data": sensor_data["data"]
 				}
-
 				# Add data entry to the appropriate sensor in Terra_Status
 				Manage.Terra_Status.add_sensor_data(sensor_name, data_entry)
 

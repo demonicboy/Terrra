@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://de0hpl8m6x08k"]
+
+[ext_resource type="Texture2D" uid="uid://dbm4w2kqvir8b" path="res://resource/snow/snow01.png" id="1_b4my7"]
+[ext_resource type="Script" path="res://sences/snow/snow.gd" id="2_2nvkg"]
+
+[node name="snow" type="Sprite2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_b4my7")
+script = ExtResource("2_2nvkg")

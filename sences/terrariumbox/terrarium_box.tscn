@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce3jts5f6u0dw"]
+[gd_scene load_steps=9 format=3 uid="uid://ce3jts5f6u0dw"]
 
 [ext_resource type="Script" path="res://sences/terrariumbox/terrarium_box.gd" id="1_diw53"]
 [ext_resource type="Texture2D" uid="uid://cxar7g4tsb40e" path="res://resource/terrarium.png" id="2_msxj5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b84nj7thcucjb" path="res://sences/dirt/dirt.tscn" id="5_0ok1x"]
 [ext_resource type="PackedScene" uid="uid://c4no283qo7gb" path="res://sences/pumper/pumper.tscn" id="6_j2wx6"]
 [ext_resource type="PackedScene" uid="uid://bikvox3d31ye1" path="res://sences/themometer/themometer.tscn" id="6_qpi84"]
+[ext_resource type="PackedScene" uid="uid://cikwart1qopsp" path="res://sences/humidity/humidity.tscn" id="8_oatpg"]
 
 [node name="TerrariumBox" type="Control"]
 layout_mode = 3
@@ -28,7 +29,7 @@ position = Vector2(207, 157)
 position = Vector2(332, 234)
 
 [node name="dirt" parent="." instance=ExtResource("5_0ok1x")]
-position = Vector2(74, 563)
+position = Vector2(65, 563)
 
 [node name="pumper" parent="." instance=ExtResource("6_j2wx6")]
 position = Vector2(196, 653)
@@ -53,6 +54,9 @@ offset_top = 738.0
 offset_right = 355.0
 offset_bottom = 769.0
 text = "Setting"
+
+[node name="humidity" parent="." instance=ExtResource("8_oatpg")]
+position = Vector2(66, 423)
 
 [connection signal="pressed" from="go_devices" to="." method="_on_go_devices_pressed"]
 [connection signal="pressed" from="go_setting" to="." method="_on_go_setting_pressed"]

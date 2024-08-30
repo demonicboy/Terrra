@@ -22,9 +22,11 @@ func call_disable()->void:
 	disable = true
 	color = Color.BLACK
 
+
 func call_active()->void:
 	disable = false
 	color = color_button
+	_correct_color()
 
 
 func _on_gui_input(event):
@@ -34,6 +36,9 @@ func _on_gui_input(event):
 		return
 	is_On = !is_On
 	
+	_correct_color()
+
+func _correct_color()->void:
 	if is_On:
 		color_button.a = 1
 	else:

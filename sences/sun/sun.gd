@@ -3,7 +3,8 @@ const SUN = preload("res://resource/sun/sun.png")
 const SUN_01 = preload("res://resource/sun/sun01.png")
 const SUN_02 = preload("res://resource/sun/sun02.png")
 const SUN_03 = preload("res://resource/sun/sun03.png")
-
+@onready var color_rect = $ColorRect
+ 
 
 var timeChange = 0.3
 var current_texture_index = 0
@@ -31,6 +32,7 @@ func lighting() -> void:
 	texture = textures[current_texture_index]
 
 func status_update() -> void:
+
 	# Kiểm tra xem light_sensor có tồn tại trong Manage.Terra_Status hay không
 	if Manage.Terra_Status.light_sensor and Manage.Terra_Status.light_sensor.data.size() > 0:
 		# Lấy dữ liệu mới nhất từ light_sensor
@@ -41,7 +43,7 @@ func status_update() -> void:
 			isActive = latest_data["data"]["isActive"]
 		
 		# Tìm node ColorRect
-		var color_rect = $ColorRect  # Đảm bảo rằng node ColorRect nằm dưới cùng cấp với node đang xử lý script này
+		 # Đảm bảo rằng node ColorRect nằm dưới cùng cấp với node đang xử lý script này
 		
 		# Nếu isActive là False, đặt màu ColorRect thành màu trắng
 		if not isActive:

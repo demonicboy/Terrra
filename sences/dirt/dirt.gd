@@ -9,8 +9,7 @@ const DIRT_05 = preload("res://resource/dirt/dirt05.png")
 var timeChange = 0.5
 var current_texture_index = 0
 var textures = [DIRT,DIRT_01, DIRT_02,DIRT_03,DIRT_04,DIRT_05]
-var threshold_dry = 20  # Ngưỡng dưới để xác định đất quá khô
-var threshold_wet = 80  # Ngưỡng trên để xác định đất quá ngập nước
+
 var moisture_status =0
 @onready var percent = $percent
 
@@ -27,7 +26,7 @@ func _ready():
 
 # Hàm này sẽ được gọi mỗi khi Timer timeout
 func _on_timer_timeout() -> void:
-	if moisture_status >= threshold_wet:
+	if moisture_status >= Manage.threshold_wet:
 		wetting()
 
 func wetting() -> void:
@@ -53,10 +52,10 @@ func status_update() -> void:
 			print("Latest moisture level: ", moisture_level)
 			
 			# Cập nhật texture dựa trên mức độ ẩm
-			if moisture_level <= threshold_dry:
+			if moisture_level <= Manage.threshold_dry:
 				texture = DIRT  # Quá khô
 				print("Moisture level is too dry. Switching to DIRT texture.")
-			elif moisture_level >= threshold_wet:
+			elif moisture_level >= Manage.threshold_wet:
 				texture = DIRT_02  # Quá ngập nước
 				print("Moisture level is too wet. Switching to DIRT_02 texture.")
 			else:

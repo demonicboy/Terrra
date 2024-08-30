@@ -6,6 +6,14 @@ var working_on_index = 0
 
 var Terra_Status:Terra
 
+var threshold_cold = 20
+var threshold_hot = 30
+
+var threshold_dry = 20  # Ngưỡng dưới để xác định đất quá khô
+var threshold_wet = 80  # Ngưỡng trên để xác định đất quá ngập nước
+
+var threshold_airdry = 20  # Ngưỡng dưới để xác định đất quá khô
+var threshold_airwet = 80  # Ngưỡng trên để xác định đất quá ngập nước
 
 
 func extract_device_data(device_data):

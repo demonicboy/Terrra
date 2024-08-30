@@ -82,9 +82,20 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Pumper"
+text = "Pump"
 
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer2"]
+[node name="pump_on" type="CheckButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TabBar3" type="TabBar" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Cooler"
+
+[node name="cooler_on" type="CheckButton" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
@@ -106,7 +117,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Hot"
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer3"]
+[node name="temperature_hot" type="TextEdit" parent="VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 text = "30"
@@ -119,7 +130,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Cold"
 
-[node name="TextEdit2" type="TextEdit" parent="VBoxContainer/HBoxContainer3"]
+[node name="temperature_cold" type="TextEdit" parent="VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 text = "20"
@@ -143,7 +154,7 @@ layout_mode = 2
 layout_mode = 2
 text = "High"
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer4"]
+[node name="humid_high" type="TextEdit" parent="VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 text = "30"
@@ -156,7 +167,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Low"
 
-[node name="TextEdit2" type="TextEdit" parent="VBoxContainer/HBoxContainer4"]
+[node name="humid_low" type="TextEdit" parent="VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 text = "20"
@@ -180,7 +191,7 @@ layout_mode = 2
 layout_mode = 2
 text = "High"
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer5"]
+[node name="moisture_high" type="TextEdit" parent="VBoxContainer/HBoxContainer5"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 text = "30"
@@ -193,7 +204,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Low"
 
-[node name="TextEdit2" type="TextEdit" parent="VBoxContainer/HBoxContainer5"]
+[node name="moisture_low" type="TextEdit" parent="VBoxContainer/HBoxContainer5"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 text = "20"

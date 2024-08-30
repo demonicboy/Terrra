@@ -1,12 +1,10 @@
 extends Sprite2D
-const COLD = preload("res://resource/thermometer/cold.png")
-const HOT = preload("res://resource/thermometer/hot.png")
-const NORMAL = preload("res://resource/thermometer/normal.png")
-@onready var temperature_lable = $temperature
+const HUMIDITY_LOW = preload("res://resource/humidity/humidity_low.png")
+const HUMIDITY_NORMAL = preload("res://resource/humidity/humidity_normal.png")
+const HUMIDITY_HIGH = preload("res://resource/humidity/humidity_high.png")
+@onready var value_label = $value
 
-
-var temperature
-
+var humidity
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalControl.update_Terra_Status.connect(status_update)
@@ -25,22 +23,21 @@ func status_update() -> void:
 		
 		# Kiểm tra và lấy giá trị nhiệt độ từ dữ liệu
 		if latest_data.has("data") and latest_data["data"].has("Value") and latest_data["data"]["Value"].has("temp"):
-			temperature = latest_data["data"]["Value"]["temp"]
-			temperature_lable.text = str(temperature) + "°C"
-			print("Latest temperature: ", temperature)
+			humidity = latest_data["data"]["Value"]["humid"]
+			value_label.text = str(humidity) + "%"
+			print("Latest humidity: ", humidity)
 
 			# So sánh nhiệt độ với các ngưỡng và thay đổi hình ảnh của Sprite2D
-			if temperature <= Manage.threshold_cold:
-				texture = COLD
-				print("Temperature is cold. Switching to COLD texture.")
-			elif temperature >= Manage.threshold_hot:
-				texture = HOT
-				print("Temperature is hot. Switching to HOT texture.")
+			if humidity <= Manage.threshold_airdry:
+				texture = HUMIDITY_LOW
+				print("humidity is cold. Switching to COLD texture.")
+			elif humidity >= Manage.threshold_airwet:
+				texture = HUMIDITY_HIGH
+				print("humidity is hot. Switching to HOT texture.")
 			else:
-				texture = NORMAL
-				print("Temperature is normal. Switching to NORMAL texture.")
+				texture = HUMIDITY_NORMAL
+				print("humidity is normal. Switching to NORMAL texture.")
 		else:
-			print("No temperature data available in the latest dht sensor data.")
+			print("No humidity data available in the latest dht sensor data.")
 	else:
 		print("No data available for dht_sensor.")
-	

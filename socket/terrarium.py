@@ -23,7 +23,7 @@ def generate_sensor_data(sensor_type, timestamp):
             "data": {
                 "Value": {
                     "temp": 16.0 + 24.0 * (uuid.uuid4().int % 100) / 100.0,  # Giá trị giả lập nhiệt độ (float) trong khoảng từ 16 đến 40
-                    "humid": 50.0 + 10.0 * (uuid.uuid4().int % 10)  # Giá trị giả lập độ ẩm (float)
+                    "humid": 5.0 + 90.0 * (uuid.uuid4().int % 10) / 9
                 }
             },
             "sensor_name": "dht",
@@ -60,6 +60,19 @@ def generate_sensor_data(sensor_type, timestamp):
                 }
             }
         }
+    elif sensor_type == "Cooler": 
+        return {
+            "data": {
+                "isActive": bool(uuid.uuid4().int % 2)  # Trạng thái hoạt động True/False
+            },
+            "sensor_name": "coolerRelay",
+            "sensor_type": sensor_type,
+            "timestamp": {
+                "$date": {
+                    "$numberLong": str(int(timestamp.timestamp() * 1000))
+                }
+            }
+        }
     elif sensor_type == "Light": 
         return {
             "data": {
@@ -81,7 +94,7 @@ def generate_sensor_data(sensor_type, timestamp):
     elif sensor_type == "Moisture": 
         return {
             "data": {
-                "Moisture": 30.0 + 10.0 * (uuid.uuid4().int % 10)  # Giá trị giả lập độ ẩm đất (float)
+               "Moisture": 10.0 + 90.0 * (uuid.uuid4().int % 100) / 100.0  # Giá trị giả lập độ ẩm đất (float) trong khoảng từ 10 đến 100
             },
             "sensor_name": "Moisture",
             "sensor_type": sensor_type,
@@ -241,7 +254,7 @@ def get_device_performance(device_id):
             to_datetime = datetime.fromisoformat(to_date.replace('Z', '+00:00'))
 
         # Giả lập dữ liệu cảm biến
-        sensors = ["DHT", "Pump", "Valve", "Light", "Moisture", "Water"]
+        sensors = ["DHT", "Pump", "Valve", "Light", "Moisture", "Water","Cooler"]
         payload = []
         for sensor in sensors:
             # Giả lập một số dữ liệu trong khoảng thời gian được chỉ định

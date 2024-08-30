@@ -16,8 +16,10 @@ func add_data_entry(entry: Dictionary):
 	# Thêm dữ liệu mới vào mảng
 	data.append(entry)
 	# Sắp xếp mảng theo timestamp từ cũ tới mới
-	data.sort_custom(_compare_timestamp)
+	sort_data()
 
+func sort_data()->void:
+	data.sort_custom(_compare_timestamp)
 # Hàm so sánh timestamp trong entry để sắp xếp
 func _compare_timestamp(a: Dictionary, b: Dictionary) -> int:
 	var time_a = a["timestamp"]["$date"]["$numberLong"].to_int()
